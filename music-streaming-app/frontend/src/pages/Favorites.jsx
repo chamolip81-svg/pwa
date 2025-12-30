@@ -57,9 +57,9 @@ export default function Favorites() {
               <span className="text-gray-500 w-8 text-center">{index + 1}</span>
 
               {/* Album Art */}
-              {song.image?.[0]?.link ? (
+              {song.image ? (
                 <img
-                  src={song.image[0].link}
+                  src={song.image}
                   alt={song.name}
                   className="w-12 h-12 rounded object-cover"
                 />
@@ -69,11 +69,13 @@ export default function Favorites() {
                 </div>
               )}
 
+
               {/* Song Info */}
               <div className="flex-1 overflow-hidden">
                 <p className="font-medium truncate">{song.name}</p>
                 <p className="text-sm text-gray-400 truncate">
-                  {song.primaryArtists}
+                  {song.artist || "Unknown Artist"}
+
                 </p>
               </div>
 
